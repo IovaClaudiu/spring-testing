@@ -1,19 +1,24 @@
 package org.ibm.examples.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name = "stock")
 public class Stock {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "stock_id")
 	public int id;
 
 	@NotBlank
+	@Column(name = "company_name")
 	public String name;
 
 	@NotBlank

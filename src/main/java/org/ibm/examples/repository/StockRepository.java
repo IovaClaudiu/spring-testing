@@ -1,13 +1,19 @@
 package org.ibm.examples.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.ibm.examples.model.Stock;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface StockRepository extends JpaRepository<Stock, Integer> {
+public interface StockRepository {
 
-	public Optional<Stock> findBySymbol(String symbol);
+	public List<Stock> getStocks();
+
+	public int getNumberOfStocks();
+
+	public int createStock(Stock stock);
+
+	public Optional<Stock> getStockById(int id);
+
+	public Optional<Stock> deleteStockById(int id);
 }
