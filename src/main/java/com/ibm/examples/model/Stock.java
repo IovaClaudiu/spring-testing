@@ -1,4 +1,4 @@
-package org.ibm.examples.model;
+package com.ibm.examples.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
